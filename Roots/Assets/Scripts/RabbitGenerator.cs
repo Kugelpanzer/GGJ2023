@@ -42,32 +42,29 @@ public class RabbitGenerator : MonoBehaviour
         float distanceToTopPlane, distanceToBottomPlane, distanceToLeftPlane, distanceToRightPlane;
         float distanceBack = float.MinValue;
 
-        if ( topPlane.Raycast ( rabbitMovement, out distanceToTopPlane ) )
+        if ( ! topPlane.Raycast ( rabbitMovement, out distanceToTopPlane ) )
         {
             if ( distanceToTopPlane < 0 && distanceToTopPlane > distanceBack )
                 distanceBack = distanceToTopPlane;
         }
-        if ( bottomPlane.Raycast ( rabbitMovement, out distanceToBottomPlane ) )
+        if ( ! bottomPlane.Raycast ( rabbitMovement, out distanceToBottomPlane ) )
         {
             if ( distanceToBottomPlane < 0 && distanceToBottomPlane > distanceBack )
                 distanceBack = distanceToBottomPlane;
         }
-        if ( leftPlane.Raycast ( rabbitMovement, out distanceToLeftPlane ) )
+        if ( ! leftPlane.Raycast ( rabbitMovement, out distanceToLeftPlane ) )
         {
             if ( distanceToLeftPlane < 0 && distanceToLeftPlane > distanceBack )
                 distanceBack = distanceToLeftPlane;
         }
-        if ( rightPlane.Raycast ( rabbitMovement, out distanceToRightPlane ) )
+        if ( ! rightPlane.Raycast ( rabbitMovement, out distanceToRightPlane ) )
         {
             if ( distanceToRightPlane < 0 && distanceToRightPlane > distanceBack )
                 distanceBack = distanceToRightPlane;
         }
 
         Vector3 rabbitStartPoint = passPoint + rabbitDirection * distanceBack;
-        Debug.Log(rabbitStartPoint);
-        //rabbit.GetComponent<RabitScript>().transform.position = rabbitStartPoint;
-        //rabbit.GetComponent<RabitScript>().direction = rabbitDirection;
-
-
+        rabbit.GetComponent<RabitScript>().transform.position = rabbitStartPoint;
+        rabbit.GetComponent<RabitScript>().direction = rabbitDirection;
     }
 }
