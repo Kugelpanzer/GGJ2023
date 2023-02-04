@@ -48,7 +48,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
         DieWithHonor();
     }
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         Controller.instance.allEnemies.Add(this);
         target = Controller.instance.playerTarget;
@@ -59,13 +59,13 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
             Controller.instance.allEnemies.Remove(this);
     }
     // Update is called once per frame
-    void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (!Controller.instance.isPaused)
         {
             if (!rooted)
             {
-                transform.position = Vector3.MoveTowards(transform.position, target.position, speed / 100);
+                transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
             }
             if (rootDuration > 0)
             {
