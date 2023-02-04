@@ -13,7 +13,7 @@ public class ZigZagEnemy : BaseEnemy
     public override void Start ()
     {
         ZigOrZag = Random.Range ( 0, 2 ) < 1;
-        ZigZagTimeLeft = ZigZagTime;
+        ZigZagTimeLeft = ZigZagTime * Random.Range ( 0.8f, 1.2f );
         base.Start ();
     }
 
@@ -28,7 +28,8 @@ public class ZigZagEnemy : BaseEnemy
                 if ( ZigZagTimeLeft < 0 )
                 {
                     ZigOrZag = !ZigOrZag;
-                    ZigZagTimeLeft = ZigZagTime;
+                    ZigZagAngle *= Random.Range ( 0.5f, 1f );
+                    ZigZagTimeLeft = ZigZagTime * Random.Range ( 0.8f, 1.2f );
                 }
 
                 // movement

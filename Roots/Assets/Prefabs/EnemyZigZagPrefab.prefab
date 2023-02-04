@@ -118,5 +118,5 @@ MonoBehaviour:
   rooted: 0
   rootDuration: 0
   target: {fileID: 0}
-  ZigZagAngle: 45
-  ZigZagTime: 1.5
+  ZigZagAngle: 70
+  ZigZagTime: 2
