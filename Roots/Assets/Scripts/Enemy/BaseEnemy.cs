@@ -47,7 +47,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!Controller.isPaused)
+        if (!Controller.instance.isPaused)
         {
             if (!rooted)
             {
