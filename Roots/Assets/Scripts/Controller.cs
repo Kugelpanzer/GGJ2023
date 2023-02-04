@@ -6,10 +6,12 @@ public class Controller : MonoBehaviour
 {
     public static Controller instance;
 
-    public static bool isPaused = false;
+
     public int playerHealth=10;
     public int currentPlayerHealth;
 
+
+    public bool isPaused = false;
     public List<BaseEnemy> allEnemies = new List<BaseEnemy>();
     public Transform playerTarget;
 
