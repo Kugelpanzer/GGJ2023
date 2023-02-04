@@ -45,7 +45,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
             Controller.instance.allEnemies.Remove(this);
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!Controller.isPaused)
         {
