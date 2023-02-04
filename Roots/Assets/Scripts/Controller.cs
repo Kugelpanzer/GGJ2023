@@ -42,7 +42,7 @@ public class Controller : MonoBehaviour
     public void DealDamageToPlayer(int damage)
     {
         currentPlayerHealth -= damage;
-        if (currentPlayerHealth < 0)
+        if (currentPlayerHealth <= 0)
         {
             KillPlayer();
         }
