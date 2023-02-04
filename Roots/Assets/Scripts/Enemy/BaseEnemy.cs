@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class BaseEnemy : MonoBehaviour
+public class BaseEnemy : MonoBehaviour, IPointerClickHandler
 {
     public float speed = 1;
     public int health = 1;
@@ -40,7 +41,8 @@ public class BaseEnemy : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Controller.instance.allEnemies.Remove(this);
+        if(Controller.instance!=null)
+            Controller.instance.allEnemies.Remove(this);
     }
     // Update is called once per frame
     void Update()
@@ -61,5 +63,11 @@ public class BaseEnemy : MonoBehaviour
             }
         }
         
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        GetRooted();
+        Debug.Log("Rooted ");
     }
 }

@@ -11,6 +11,7 @@ public class Controller : MonoBehaviour
     public List<BaseEnemy> allEnemies = new List<BaseEnemy>();
     public Transform playerTarget;
 
+
     private void Awake()
     {
         if (instance == null)
@@ -29,9 +30,10 @@ public class Controller : MonoBehaviour
 
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
