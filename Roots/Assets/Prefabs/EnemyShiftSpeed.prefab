@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 122008132867383542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9daee0918289d48888fe4e63160c78, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d803ff6d889b4742a69b170cff36e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
@@ -118,5 +118,6 @@ MonoBehaviour:
   rooted: 0
   rootDuration: 0
   target: {fileID: 0}
-  speedChange: 5
-  Interval: 0.5
+  speedChange: 0
+  Interval: 0
+  randomTimeDelta: 0.2
