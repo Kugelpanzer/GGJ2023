@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
+    public List<EnemyTypeGenerator> enemyTypes = new List<EnemyTypeGenerator> ();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +17,15 @@ public class EnemyGenerator : MonoBehaviour
     {
         
     }
+}
+
+[Serializable]
+public class EnemyTypeGenerator
+{
+    public GameObject enemyPrefab;
+    float startsFrom;
+    float startSpawnTime;
+    float minSpawnTime;
+    float SpawnTimeDecrement;
+    float SpawnChance;
 }
