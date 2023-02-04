@@ -5,14 +5,14 @@ using UnityEngine;
 public class RabbitGenerator : MonoBehaviour
 {
     public static RabbitGenerator instance;
-
+    public GameObject rabbitPrefab;
     private void Awake () { if ( instance == null ) instance = this; }
     void OnDestroy () { instance = null; }
 
     // Start is called before the first frame update
     void Start ()
     {
-        
+        SpawnRabbit(rabbitPrefab);
     }
 
     // Update is called once per frame
@@ -64,5 +64,10 @@ public class RabbitGenerator : MonoBehaviour
         }
 
         Vector3 rabbitStartPoint = passPoint + rabbitDirection * distanceBack;
+        Debug.Log(rabbitStartPoint);
+        //rabbit.GetComponent<RabitScript>().transform.position = rabbitStartPoint;
+        //rabbit.GetComponent<RabitScript>().direction = rabbitDirection;
+
+
     }
 }
