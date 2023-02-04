@@ -10,6 +10,8 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
 
     [Tooltip(" how much score do you get when you kill this enemy")]
     public int score = 1;
+
+    public int damageToPlayer = 1;
     public bool rooted = false;
     public float rootDuration = 0f;
     public Transform target;
@@ -28,10 +30,16 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
 
     }
 
+    //is triggered when enemy reaches the player
+    public virtual void DieWithHonor()
+    {
+        Destroy(gameObject);
+    }
     //this function is triggerd when enemy collides with player
     public virtual void AttackPlayer()
     {
-
+        Controller.instance.DealDamageToPlayer(damageToPlayer);
+        DieWithHonor();
     }
     // Start is called before the first frame update
     void Start()
@@ -69,5 +77,13 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     {
         GetRooted();
         Debug.Log("Rooted ");
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<PlayerScript>() != null)
+        {
+            AttackPlayer();
+
+        }
     }
 }
