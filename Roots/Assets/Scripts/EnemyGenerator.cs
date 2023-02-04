@@ -16,6 +16,7 @@ public class EnemyGenerator : MonoBehaviour
     void Start ()
     {
         elapsedTime = 0f;
+        foreach ( EnemyTypeGenerator enemyType in enemyTypes ) enemyType.Init ();
     }
 
     // Update is called once per frame
