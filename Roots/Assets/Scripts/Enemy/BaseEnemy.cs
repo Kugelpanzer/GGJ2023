@@ -16,18 +16,24 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     public float rootDuration = 0f;
     public Transform target;
 
-    public virtual void Movement() 
+
+    public virtual void DealDamage(int damage)
     {
-        
+        health -= damage;
+        if (health < damage)
+        {
+            Die();
+        }
     }
     public virtual void GetRooted()
     {
         rooted = true;
         rootDuration = RootConfig.instance.rootDuration;
+        DealDamage(RootConfig.instance.rootDamage);
     }
     public virtual void Die()
     {
-
+        Destroy(gameObject);
     }
 
     //is triggered when enemy reaches the player
