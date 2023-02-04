@@ -65,7 +65,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
         {
             if (!rooted)
             {
-                transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
+                Movement();
             }
             if (rootDuration > 0)
             {
@@ -77,6 +77,11 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
             }
         }
         
+    }
+
+    public virtual void Movement ()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
     }
 
     public void OnPointerClick(PointerEventData eventData)
