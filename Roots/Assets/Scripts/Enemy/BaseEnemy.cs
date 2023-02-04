@@ -55,7 +55,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
             }
             if (rootDuration > 0)
             {
-                rootDuration -= Time.deltaTime;
+                rootDuration -= Time.fixedDeltaTime;
             }
             else
             {
