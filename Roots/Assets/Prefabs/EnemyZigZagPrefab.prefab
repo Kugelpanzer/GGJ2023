@@ -108,15 +108,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 9217295114019059673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c990526f9ed3a334e8bd1b9fa2a30a07, type: 3}
+  m_Script: {fileID: 11500000, guid: cf4cc2d538a682d498d1898ebae5f28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   health: 1
   score: 1
   damageToPlayer: 1
   rooted: 0
   rootDuration: 0
   target: {fileID: 0}
-  ZigZagAngle: 0
-  ZigZagTime: 0
+  ZigZagAngle: 45
+  ZigZagTime: 1.5
