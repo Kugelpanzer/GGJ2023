@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RabbitGenerator : MonoBehaviour
 {
+    public float rabbitSpawnTime = 4f;
+    private float rabbitSpawnTimeLeft;
     public static RabbitGenerator instance;
     public GameObject rabbitPrefab;
     private void Awake () { if ( instance == null ) instance = this; }
@@ -12,13 +14,19 @@ public class RabbitGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start ()
     {
+        rabbitSpawnTimeLeft = rabbitSpawnTime * Random.Range ( 0.8f, 1.2f );
         SpawnRabbit(rabbitPrefab);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        rabbitSpawnTimeLeft -= Time.fixedDeltaTime;
+        if (rabbitSpawnTimeLeft < 0)
+        {
+            SpawnRabbit ( rabbitPrefab );
+            rabbitSpawnTimeLeft = rabbitSpawnTime * Random.Range ( 0.8f, 1.2f );
+        }
     }
 
     public void SpawnRabbit (GameObject rabbitPrefab)

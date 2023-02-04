@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79315a4f714aeb542a99bafd55eb4242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rabbitSpawnTime: 8
   rabbitPrefab: {fileID: 2673344995511302490, guid: fb2ec2a2765340d4c850398595f855e3,
     type: 3}
 --- !u!1001 &1507175991
