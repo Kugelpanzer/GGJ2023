@@ -10,7 +10,10 @@ public class RabitScript : MonoBehaviour, IPointerClickHandler
    
     public float speed;
     public Vector3 direction;
-
+    public GameObject upgradeRootPrefab;
+    public GameObject upgradeHealthPrefab;
+    public List<GameObject> healList = new List<GameObject>();
+    public List<GameObject> rootList = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,8 @@ public class RabitScript : MonoBehaviour, IPointerClickHandler
         //Debug.Log("direction "+ direction.x);
         if(direction.x>0)
             transform.localScale = new Vector2( -transform.localScale.x,transform.localScale.y);
+        upgradeHealthPrefab = Controller.instance.healBuffPrefab;
+        upgradeRootPrefab = Controller.instance.rootBuffPrefab;
     }
 
     // Update is called once per frame
@@ -35,6 +40,12 @@ public class RabitScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+        GameObject _heal = Instantiate(upgradeHealthPrefab);
+        GameObject _root = Instantiate(upgradeRootPrefab);
+
+        GameObject hPos = healList[Random.Range(0, healList.Count)];
+        GameObject hRoot = rootList[Random.Range(0, rootList.Count)];
+
+
     }
 }

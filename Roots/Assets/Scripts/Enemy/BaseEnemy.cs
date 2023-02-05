@@ -33,17 +33,24 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     {
         rooted = true;
         rootDuration = RootConfig.instance.rootDuration;
-        DealDamage(RootConfig.instance.rootDamage);
-        currRoot =Instantiate( Controller.instance.rootPrefab);
+        currRoot = Instantiate(Controller.instance.rootPrefab);
         currRoot.transform.position = transform.position;
+        currRoot.GetComponent<RootScript>().ork = gameObject;
+        DealDamage(RootConfig.instance.rootDamage);
+
         if(fakeBody != null)
             fakeBody.GetComponent<Animator>().speed = 0;
     }
     public virtual void Die()
     {
-        Destroy(gameObject);
+        if (currRoot != null)
+        {
+            currRoot.GetComponent<RootScript>().orkDead = true;
+        }
+        rooted = true;
+        //Destroy(gameObject);
         Controller.instance.scoreCounter += score;
-        if(currRoot!= null) Destroy(currRoot);
+
     }
 
     //is triggered when enemy reaches the player

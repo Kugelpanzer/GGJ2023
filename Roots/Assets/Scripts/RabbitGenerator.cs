@@ -15,7 +15,6 @@ public class RabbitGenerator : MonoBehaviour
     void Start ()
     {
         rabbitSpawnTimeLeft = rabbitSpawnTime * Random.Range ( 0.8f, 1.2f );
-        SpawnRabbit(rabbitPrefab);
     }
 
     // Update is called once per frame

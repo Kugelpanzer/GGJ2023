@@ -17,6 +17,8 @@ public class Controller : MonoBehaviour
     public List<BaseEnemy> allEnemies = new List<BaseEnemy>();
     public Transform playerTarget;
     public GameObject rootPrefab;
+    public GameObject healBuffPrefab;
+    public GameObject rootBuffPrefab;
 
 
     private void Awake()

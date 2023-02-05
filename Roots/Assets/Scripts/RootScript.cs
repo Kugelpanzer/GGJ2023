@@ -5,9 +5,13 @@ using UnityEngine;
 public class RootScript : MonoBehaviour
 {
     public GameObject ork;
+    public bool orkDead = false;
     public void EndAnimation()
     {
-        if(ork == null)
+        if (orkDead)
+        {
+            Destroy(ork);
             Destroy(gameObject);
+        }
     }
 }
