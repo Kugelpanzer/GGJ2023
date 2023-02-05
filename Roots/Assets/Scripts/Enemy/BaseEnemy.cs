@@ -18,6 +18,8 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     public GameObject fakeBody;
     private float animatorSpeed = 0;
 
+    public GameObject currRoot ;
+
 
     public virtual void DealDamage(int damage)
     {
@@ -32,6 +34,8 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
         rooted = true;
         rootDuration = RootConfig.instance.rootDuration;
         DealDamage(RootConfig.instance.rootDamage);
+        currRoot =Instantiate( Controller.instance.rootPrefab);
+        currRoot.transform.position = transform.position;
         if(fakeBody != null)
             fakeBody.GetComponent<Animator>().speed = 0;
     }
@@ -39,6 +43,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     {
         Destroy(gameObject);
         Controller.instance.scoreCounter += score;
+        if(currRoot!= null) Destroy(currRoot);
     }
 
     //is triggered when enemy reaches the player
@@ -83,6 +88,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
                 if (fakeBody != null)
                     fakeBody.GetComponent<Animator>().speed= animatorSpeed ;
                 rooted = false;
+                Destroy(currRoot);
             }
         }
         

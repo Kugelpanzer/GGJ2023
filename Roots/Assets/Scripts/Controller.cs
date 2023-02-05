@@ -16,6 +16,7 @@ public class Controller : MonoBehaviour
     public bool isPaused = false;
     public List<BaseEnemy> allEnemies = new List<BaseEnemy>();
     public Transform playerTarget;
+    public GameObject rootPrefab;
 
 
     private void Awake()
