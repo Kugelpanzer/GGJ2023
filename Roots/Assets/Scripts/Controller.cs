@@ -40,6 +40,7 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         currentPlayerHealth = playerHealth;
         for (int i = 0; i < currentPlayerHealth; i++)
         {

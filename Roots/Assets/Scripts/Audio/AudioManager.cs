@@ -41,7 +41,6 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(gameObject);
 
         foreach (Sound s in sounds)
         {

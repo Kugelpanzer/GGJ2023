@@ -20,7 +20,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
 
     public GameObject currRoot ;
 
-
+    public Texture2D cursor;
     public virtual void DealDamage(int damage)
     {
         health -= damage;
@@ -71,6 +71,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
             animatorSpeed = fakeBody.GetComponent<Animator>().speed;
         Controller.instance.allEnemies.Add(this);
         target = Controller.instance.playerTarget;
+
     }
     private void OnDestroy()
     {
