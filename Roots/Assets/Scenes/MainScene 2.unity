@@ -3876,25 +3876,46 @@ MonoBehaviour:
   enemyTypes:
   - enemyPrefab: {fileID: 122008132867383542, guid: 0b25d669186d80e4a8846e523e203283,
       type: 3}
-    startsFrom: 1
-    startRespawnTime: 4
-    minRespawnTime: 1
-    RespawnTimeDecrement: 0.33
-    SpawnChance: 70
+    startsFrom: 2
+    startRespawnTime: 6
+    minRespawnTime: 3.2
+    RespawnTimeDecrement: 0.4
+    SpawnChance: 1
   - enemyPrefab: {fileID: 9217295114019059673, guid: 70e98db15678aef40ab00c83e24cbc95,
       type: 3}
-    startsFrom: 2
-    startRespawnTime: 2.8
-    minRespawnTime: 0.7
-    RespawnTimeDecrement: 0.1
-    SpawnChance: 25
+    startsFrom: 14
+    startRespawnTime: 5.7
+    minRespawnTime: 1.2
+    RespawnTimeDecrement: 0.2
+    SpawnChance: 0.75
   - enemyPrefab: {fileID: 122008132867383542, guid: 1ec00f1433b98fb44976d65e44dfd57e,
       type: 3}
-    startsFrom: 1
-    startRespawnTime: 6
-    minRespawnTime: 3
+    startsFrom: 22
+    startRespawnTime: 3
+    minRespawnTime: 2.1
     RespawnTimeDecrement: 0.1
-    SpawnChance: 25
+    SpawnChance: 0.75
+  - enemyPrefab: {fileID: 122008132867383542, guid: 0b25d669186d80e4a8846e523e203283,
+      type: 3}
+    startsFrom: 36
+    startRespawnTime: 5.7
+    minRespawnTime: 4.9
+    RespawnTimeDecrement: 0.1
+    SpawnChance: 0.5
+  - enemyPrefab: {fileID: 9217295114019059673, guid: 70e98db15678aef40ab00c83e24cbc95,
+      type: 3}
+    startsFrom: 68
+    startRespawnTime: 4.2
+    minRespawnTime: 2.3
+    RespawnTimeDecrement: 0.3
+    SpawnChance: 0.5
+  - enemyPrefab: {fileID: 122008132867383542, guid: 1ec00f1433b98fb44976d65e44dfd57e,
+      type: 3}
+    startsFrom: 104
+    startRespawnTime: 2.9
+    minRespawnTime: 2.2
+    RespawnTimeDecrement: 0.05
+    SpawnChance: 0.5
 --- !u!114 &835135167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3907,7 +3928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79315a4f714aeb542a99bafd55eb4242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rabbitSpawnTime: 8
+  rabbitSpawnTime: 7.2
   rabbitPrefab: {fileID: 2673344995511302490, guid: fb2ec2a2765340d4c850398595f855e3,
     type: 3}
 --- !u!82 &835135168
