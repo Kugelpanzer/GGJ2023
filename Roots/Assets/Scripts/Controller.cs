@@ -20,6 +20,10 @@ public class Controller : MonoBehaviour
     public GameObject healBuffPrefab;
     public GameObject rootBuffPrefab;
 
+    public GameObject uiHealthLayout;
+    public List<GameObject> uiHealth = new List<GameObject>();
+    public GameObject uiImageHealth;
+
 
     private void Awake()
     {
@@ -37,17 +41,37 @@ public class Controller : MonoBehaviour
     void Start()
     {
         currentPlayerHealth = playerHealth;
+        for (int i = 0; i < currentPlayerHealth; i++)
+        {
+            uiHealth.Add(Instantiate(uiImageHealth, uiHealthLayout.transform));
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         ScoreText.text = "Score: " + scoreCounter.ToString();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LevelController.instance.QuitGame();
+        }
     }
 
     public void DealDamageToPlayer(int damage)
     {
         currentPlayerHealth -= damage;
+        if(currentPlayerHealth> 0)
+        {
+            foreach(GameObject g in uiHealth)
+            {
+                Destroy(g);
+            }
+            uiHealth.Clear();
+            for(int i=0;i < currentPlayerHealth; i++)
+            {
+                uiHealth.Add(Instantiate(uiImageHealth, uiHealthLayout.transform));
+            }
+        }
         if (currentPlayerHealth <= 0)
         {
             KillPlayer();
