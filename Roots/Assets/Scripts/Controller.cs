@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Controller : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class Controller : MonoBehaviour
 
     public int playerHealth=10;
     public int currentPlayerHealth;
-
+    public float scoreCounter;
+    public TextMeshProUGUI ScoreText;
 
     public bool isPaused = false;
     public List<BaseEnemy> allEnemies = new List<BaseEnemy>();
@@ -37,6 +39,7 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ScoreText.text = "Score: " + scoreCounter.ToString();
     }
 
     public void DealDamageToPlayer(int damage)

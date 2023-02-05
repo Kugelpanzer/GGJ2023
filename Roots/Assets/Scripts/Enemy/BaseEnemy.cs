@@ -34,6 +34,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     public virtual void Die()
     {
         Destroy(gameObject);
+        Controller.instance.scoreCounter += score;
     }
 
     //is triggered when enemy reaches the player
