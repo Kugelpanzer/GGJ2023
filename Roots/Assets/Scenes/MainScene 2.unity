@@ -3886,6 +3886,7 @@ GameObject:
   - component: {fileID: 835135167}
   - component: {fileID: 835135168}
   - component: {fileID: 835135169}
+  - component: {fileID: 835135170}
   m_Layer: 0
   m_Name: ControllerObject
   m_TagString: Untagged
@@ -3944,8 +3945,10 @@ MonoBehaviour:
   playerTarget: {fileID: 1578493397}
   rootPrefab: {fileID: 3871311853696923629, guid: dbd4747126127d84d8c84f01deb57b5b,
     type: 3}
-  healBuffPrefab: {fileID: 0}
-  rootBuffPrefab: {fileID: 0}
+  healBuffPrefab: {fileID: 958206591375761408, guid: 1decae569fd1f5542b3071d6d9580f6a,
+    type: 3}
+  rootBuffPrefab: {fileID: 2510779074864556154, guid: c4d4097e0a64ac5448fd099932c44f81,
+    type: 3}
 --- !u!114 &835135166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4103,6 +4106,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d3f5d48a554fb4ba3609f2a235edce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &835135170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835135162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51f786e5a27ff9428937b52704ab7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTime: 3
+  distanceToPlayer: 3
+  upgradePrefabs:
+  - {fileID: 958206591375761408, guid: 1decae569fd1f5542b3071d6d9580f6a, type: 3}
+  - {fileID: 2510779074864556154, guid: c4d4097e0a64ac5448fd099932c44f81, type: 3}
 --- !u!1 &862164769
 GameObject:
   m_ObjectHideFlags: 0
