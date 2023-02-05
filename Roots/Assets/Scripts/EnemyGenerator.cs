@@ -49,39 +49,38 @@ public class EnemyGenerator : MonoBehaviour
 
         Debug.DrawLine(new Vector3(0, 0, 0), topRigth, Color.red,20f);
         Debug.DrawLine(new Vector3(0, 0, 0), bottomLeft, Color.blue, 20f);
+        GameObject gj = Instantiate(enemyPrefab);
+        Vector2 size = gj.GetComponent<SpriteRenderer>().size;
 
+        Debug.Log(size);
         int strana = Random.Range(0, 4); //0 - top, 1 - right, 2-bottom, 3-left
         if(strana == 0)
         {
-            GameObject gj = Instantiate(enemyPrefab);
-            Vector2 size = gj.GetComponent<SpriteRenderer>().size;
-            float yy = topRigth.y + size.y;
+
+            float yy = topRigth.y + 0.2f;
             float xx = Random.Range(bottomLeft.x, topRigth.x);
 
             gj.transform.position = new Vector2(xx, yy);
         }
         else if(strana == 1)
         {
-            GameObject gj = Instantiate(enemyPrefab);
-            Vector2 size = gj.GetComponent<SpriteRenderer>().size;
+
             float yy = Random.Range(bottomLeft.y, topRigth.y);
-            float xx = topRigth.x+size.x;
+            float xx = topRigth.x+ 0.2f;
             gj.transform.position = new Vector2(xx, yy);
         }
         else if (strana == 2)
         {
-            GameObject gj = Instantiate(enemyPrefab);
-            Vector2 size = gj.GetComponent<SpriteRenderer>().size;
-            float yy = bottomLeft.y - size.y;
+
+            float yy = bottomLeft.y - 0.2f;
             float xx = Random.Range(bottomLeft.x, topRigth.x);
             gj.transform.position = new Vector2(xx, yy);
         }
         else
         {
-            GameObject gj = Instantiate(enemyPrefab);
-            Vector2 size = gj.GetComponent<SpriteRenderer>().size;
+
             float yy = Random.Range(bottomLeft.y, topRigth.y);
-            float xx = bottomLeft.x - size.x;
+            float xx = bottomLeft.x - 0.2f;
             gj.transform.position = new Vector2(xx, yy);
         }
     }
