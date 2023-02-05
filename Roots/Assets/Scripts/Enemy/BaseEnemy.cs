@@ -15,6 +15,8 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     public bool rooted = false;
     public float rootDuration = 0f;
     public Transform target;
+    public GameObject fakeBody;
+    private float animatorSpeed = 0;
 
 
     public virtual void DealDamage(int damage)
@@ -30,6 +32,8 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
         rooted = true;
         rootDuration = RootConfig.instance.rootDuration;
         DealDamage(RootConfig.instance.rootDamage);
+        if(fakeBody != null)
+            fakeBody.GetComponent<Animator>().speed = 0;
     }
     public virtual void Die()
     {
@@ -51,6 +55,8 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     public virtual void Start()
     {
+        if (fakeBody != null)
+            animatorSpeed = fakeBody.GetComponent<Animator>().speed;
         Controller.instance.allEnemies.Add(this);
         target = Controller.instance.playerTarget;
     }
@@ -74,6 +80,8 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
             }
             else
             {
+                if (fakeBody != null)
+                    fakeBody.GetComponent<Animator>().speed= animatorSpeed ;
                 rooted = false;
             }
         }
@@ -87,8 +95,9 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        GetRooted();
-        Debug.Log("Rooted ");
+        if(!rooted)
+            GetRooted();
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
