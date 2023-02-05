@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class BaseBuff : MonoBehaviour
+public class BaseBuff : MonoBehaviour, IPointerClickHandler
 {
     public static float duration;
+
+    public int buffDamage = 0;
+    public int buffRootDuration = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +22,14 @@ public class BaseBuff : MonoBehaviour
         {
             duration -= Time.fixedDeltaTime;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+
     }
 }
