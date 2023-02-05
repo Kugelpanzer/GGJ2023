@@ -5,10 +5,13 @@ using UnityEngine.EventSystems;
 
 public class BaseBuff : MonoBehaviour, IPointerClickHandler
 {
-    public static float duration;
+    public static float duration=2f;
 
-    public int buffDamage = 0;
-    public int buffRootDuration = 0;
+
+    public bool rootAllEnemies = false;
+    public bool heal = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,17 @@ public class BaseBuff : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
+        if (rootAllEnemies)
+        {
+            foreach( BaseEnemy gj in Controller.instance.allEnemies)
+            {
+                gj.GetRooted();
+            }
+        } 
+        
+        if(heal)
+        {
+            Controller.instance.currentPlayerHealth = Controller.instance.playerHealth;
+        }
     }
 }

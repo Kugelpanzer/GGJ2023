@@ -15,7 +15,9 @@ public class RabitScript : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Debug.Log("direction "+ direction.x);
+        if(direction.x>0)
+            transform.localScale = new Vector2( -transform.localScale.x,transform.localScale.y);
     }
 
     // Update is called once per frame
