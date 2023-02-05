@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class BaseBuff : MonoBehaviour, IPointerClickHandler
 {
-    public static float duration=2f;
+    public float duration=2f;
 
 
     public bool rootAllEnemies = false;
@@ -37,7 +37,8 @@ public class BaseBuff : MonoBehaviour, IPointerClickHandler
         {
             foreach( BaseEnemy gj in Controller.instance.allEnemies)
             {
-                gj.GetRooted();
+                if(!gj.rooted)
+                    gj.GetRooted();
             }
         } 
         
@@ -45,5 +46,6 @@ public class BaseBuff : MonoBehaviour, IPointerClickHandler
         {
             Controller.instance.currentPlayerHealth = Controller.instance.playerHealth;
         }
+        Destroy(gameObject);
     }
 }

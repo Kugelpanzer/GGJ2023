@@ -136,6 +136,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   direction: {x: 0, y: 0, z: 0}
+  upgradeRootPrefab: {fileID: 2510779074864556154, guid: c4d4097e0a64ac5448fd099932c44f81,
+    type: 3}
+  upgradeHealthPrefab: {fileID: 958206591375761408, guid: 1decae569fd1f5542b3071d6d9580f6a,
+    type: 3}
+  healList:
+  - {fileID: 8250145340995030787}
+  - {fileID: 3944848649246128867}
+  - {fileID: 8146797482781768439}
+  - {fileID: 4304272816829917046}
+  rootList:
+  - {fileID: 4373945578283871177}
+  - {fileID: 378614666757917036}
+  - {fileID: 4127807123022917776}
+  - {fileID: 4244902131839695360}
 --- !u!58 &3740084834355108307
 CircleCollider2D:
   m_ObjectHideFlags: 0
