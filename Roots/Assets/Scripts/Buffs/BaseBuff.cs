@@ -44,7 +44,9 @@ public class BaseBuff : MonoBehaviour, IPointerClickHandler
         
         if(heal)
         {
-            Controller.instance.currentPlayerHealth = Controller.instance.playerHealth;
+            Controller.instance.currentPlayerHealth++;
+            if(Controller.instance.currentPlayerHealth> Controller.instance.playerHealth)
+                Controller.instance.currentPlayerHealth = Controller.instance.playerHealth;
         }
         Destroy(gameObject);
     }

@@ -49,7 +49,7 @@ public class RabitScript : MonoBehaviour, IPointerClickHandler
         int pos2h = Random.Range(0, healList.Count);
         int pos2r = Random.Range(0, rootList.Count);
         int i = 0;
-        while(pos2r == pos1r)
+       /* while(pos2r == pos1r)
         {
             pos2r = Random.Range(0, rootList.Count);
             i++;
@@ -61,16 +61,16 @@ public class RabitScript : MonoBehaviour, IPointerClickHandler
 
             i++;
             if (i > 1000) break;
-        }
+        }*/
 
         _heal.transform.position = healList[pos1h].transform.position;
         _root.transform.position = rootList[pos1r].transform.position;
 
-        _heal = Instantiate(upgradeHealthPrefab);
+       /* _heal = Instantiate(upgradeHealthPrefab);
         _root = Instantiate(upgradeRootPrefab);
 
         _heal.transform.position = healList[pos2h].transform.position;
-        _root.transform.position = rootList[pos2r].transform.position;
+        _root.transform.position = rootList[pos2r].transform.position;*/
 
     }
 }
