@@ -3861,6 +3861,7 @@ MonoBehaviour:
   uiHealth: []
   uiImageHealth: {fileID: 497078866325667318, guid: 940af377e9ca9a9459a0b073702a8cb0,
     type: 3}
+  cursorTexture: {fileID: 2800000, guid: d1a62eddc8e13a741a36df8c9e8bc1cc, type: 3}
 --- !u!114 &835135166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4071,8 +4072,28 @@ MonoBehaviour:
   sounds:
   - name: main
     clip: {fileID: 8300000, guid: 22d5be984d2a9f240940e58bca76c1d1, type: 3}
-    volume: 0.513
+    volume: 0.209
     loop: 1
+    source: {fileID: 0}
+  - name: burn
+    clip: {fileID: 8300000, guid: e35bb0928d8ca8b4bad4abb04351f970, type: 3}
+    volume: 0.773
+    loop: 0
+    source: {fileID: 0}
+  - name: err1
+    clip: {fileID: 8300000, guid: 0e31aeeef68aaa141b838f37862d8351, type: 3}
+    volume: 0.784
+    loop: 0
+    source: {fileID: 0}
+  - name: zec
+    clip: {fileID: 8300000, guid: f00401a255c19224789a5552c4c861a6, type: 3}
+    volume: 0.761
+    loop: 0
+    source: {fileID: 0}
+  - name: err2
+    clip: {fileID: 8300000, guid: 0c2e8215fcb694e40a143cb518ce2e68, type: 3}
+    volume: 0.814
+    loop: 0
     source: {fileID: 0}
 --- !u!1 &862164769
 GameObject:
@@ -9921,7 +9942,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128159131}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
