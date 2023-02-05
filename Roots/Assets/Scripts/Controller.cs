@@ -50,7 +50,7 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = "Score: " + scoreCounter.ToString();
+        ScoreText.text = "SCORE " + scoreCounter.ToString();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             LevelController.instance.QuitGame();
