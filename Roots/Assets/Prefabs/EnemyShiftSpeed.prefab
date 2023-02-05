@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d803ff6d889b4742a69b170cff36e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.5
   health: 1
   score: 1
   damageToPlayer: 1
@@ -105,8 +105,9 @@ MonoBehaviour:
   rootDuration: 0
   target: {fileID: 0}
   fakeBody: {fileID: 5086687055017344354}
-  speedChange: 0
-  Interval: 0
+  currRoot: {fileID: 0}
+  speedChange: 4
+  Interval: 0.5
   randomTimeDelta: 0.2
 --- !u!61 &5184962018539283725
 BoxCollider2D:
