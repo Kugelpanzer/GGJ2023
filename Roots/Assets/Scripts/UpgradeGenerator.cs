@@ -29,8 +29,8 @@ public class UpgradeGenerator : MonoBehaviour
     {
         Vector2 topRigth = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         Vector2 bottomLeft = Camera.main.ScreenToWorldPoint(Vector2.zero);
-        float xx = Random.Range(bottomLeft.x, topRigth.x);
-        float yy = Random.Range(bottomLeft.y, topRigth.y);
+        float xx = Random.Range(bottomLeft.x+ bottomLeft.x*0.15f, topRigth.x - topRigth.x*0.15f);
+        float yy = Random.Range(bottomLeft.y + bottomLeft.y*0.15f, topRigth.y - topRigth.y*0.15f);
 
         if(Vector2.Distance(new Vector2(xx,yy),Controller.instance.playerTarget.position)> distanceToPlayer)
         {
