@@ -12,6 +12,7 @@ public class ZigZagEnemy : BaseEnemy
 
     public override void Start ()
     {
+        AudioManager.instance.PlaySound("burn");
         ZigOrZag = Random.Range ( 0, 2 ) < 1;
         ZigZagTimeLeft = ZigZagTime * Random.Range ( 0.8f, 1.2f );
         base.Start ();

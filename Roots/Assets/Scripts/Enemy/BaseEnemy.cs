@@ -20,7 +20,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
 
     public GameObject currRoot ;
 
-    public Texture2D cursor;
+
     public virtual void DealDamage(int damage)
     {
         health -= damage;
@@ -37,8 +37,8 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
         currRoot.transform.position = transform.position;
         currRoot.GetComponent<RootScript>().ork = gameObject;
         DealDamage(RootConfig.instance.rootDamage);
-
-        if(fakeBody != null)
+        AudioManager.instance.PlaySound("err2");
+        if (fakeBody != null)
             fakeBody.GetComponent<Animator>().speed = 0;
     }
     public virtual void Die()
@@ -50,6 +50,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
         rooted = true;
         //Destroy(gameObject);
         Controller.instance.scoreCounter += score;
+        
 
     }
 

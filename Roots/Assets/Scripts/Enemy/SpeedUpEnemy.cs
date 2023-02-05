@@ -16,6 +16,7 @@ public class SpeedUpEnemy : BaseEnemy
     {
         base.Start();
         currentSpeed = speed;
+        AudioManager.instance. PlaySound("err1");
     }
 
     public override void Movement()

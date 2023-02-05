@@ -24,14 +24,14 @@ public class Controller : MonoBehaviour
     public List<GameObject> uiHealth = new List<GameObject>();
     public GameObject uiImageHealth;
 
-
+    public Texture2D cursorTexture;
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
-
+        Cursor.SetCursor(cursorTexture, new Vector2(0, 0), CursorMode.Auto);
     }
     void OnDestroy()
     {

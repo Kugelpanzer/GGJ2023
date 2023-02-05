@@ -15,6 +15,9 @@ public class RabitScript : MonoBehaviour, IPointerClickHandler
     public List<GameObject> healList = new List<GameObject>();
     public List<GameObject> rootList = new List<GameObject>();
 
+    public float sound = 0.5f;
+    public float currSound = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,16 @@ public class RabitScript : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (currSound > 0)
+        {
+            currSound -= Time.fixedDeltaTime;
+
+        }
+        else
+        {
+            AudioManager.instance.PlaySound("zec");
+            currSound = sound;
+        }
         if (!Controller.instance.isPaused)
         {
             transform.position = Vector3.MoveTowards(transform.position,transform.position+ direction, speed * Time.fixedDeltaTime);
