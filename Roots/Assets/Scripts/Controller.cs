@@ -10,8 +10,9 @@ public class Controller : MonoBehaviour
 
     public int playerHealth=10;
     public int currentPlayerHealth;
-    public float scoreCounter;
-    public TextMeshProUGUI ScoreText;
+    public int scoreCounter;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScore;
 
     public bool isPaused = false;
     public List<BaseEnemy> allEnemies = new List<BaseEnemy>();
@@ -46,15 +47,28 @@ public class Controller : MonoBehaviour
         {
             uiHealth.Add(Instantiate(uiImageHealth, uiHealthLayout.transform));
         }
+        SetScore(0);
     }
+    public void SetScore(int score)
+    {
+        scoreCounter += score;
+        PlayerPrefs.SetInt("score", scoreCounter);
+        if (PlayerPrefs.GetInt("high_score") < scoreCounter)
+        {
+            PlayerPrefs.SetInt("high_score", scoreCounter);
+        }
 
+        highScore.text = "HIGH SCORE: " + PlayerPrefs.GetInt("high_score").ToString();
+        scoreText.text = "SCORE: " + scoreCounter.ToString();
+    }
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = "SCORE " + scoreCounter.ToString();
+        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            LevelController.instance.QuitGame();
+            LevelController.instance.ResetGame();
         }
     }
 
@@ -81,6 +95,6 @@ public class Controller : MonoBehaviour
 
     public void KillPlayer()
     {
-        LevelController.instance.ResetGame();
+        LevelController.instance.NextScene();
     }
 }

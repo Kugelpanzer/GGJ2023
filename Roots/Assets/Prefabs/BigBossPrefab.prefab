@@ -105,6 +105,10 @@ MonoBehaviour:
   target: {fileID: 0}
   fakeBody: {fileID: 7701479108603330692}
   currRoot: {fileID: 0}
+  specialRoot: {fileID: 3871311853696923629, guid: 1e59e9b93bb7a6c4b865027fc937c22e,
+    type: 3}
+  rootOffsetX: -0.3
+  rootOffsetY: 0.2
 --- !u!61 &4625659145420687752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -222,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3041275861917008371}
   - component: {fileID: 1637607796252762414}
+  - component: {fileID: 8755130611005348707}
   m_Layer: 0
   m_Name: FakeBody
   m_TagString: Untagged
@@ -294,3 +299,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8755130611005348707
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701479108603330692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

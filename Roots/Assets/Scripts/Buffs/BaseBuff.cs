@@ -48,6 +48,7 @@ public class BaseBuff : MonoBehaviour, IPointerClickHandler
             if(Controller.instance.currentPlayerHealth> Controller.instance.playerHealth)
                 Controller.instance.currentPlayerHealth = Controller.instance.playerHealth;
         }
+        Controller.instance.SetScore(1);
         Destroy(gameObject);
     }
 }

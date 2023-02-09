@@ -13,10 +13,10 @@ public class LevelController : MonoBehaviour
         {
             instance= this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+    }
+    private void OnDestroy()
+    {
+        instance = null;
     }
     public int SceneIndex()
     {

@@ -19,8 +19,10 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     private float animatorSpeed = 0;
 
     public GameObject currRoot ;
+    public GameObject specialRoot;
 
-
+    public float rootOffsetX =0;
+    public float rootOffsetY = 0;
     public virtual void DealDamage(int damage)
     {
         health -= damage;
@@ -33,8 +35,16 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
     {
         rooted = true;
         rootDuration = RootConfig.instance.rootDuration;
-        currRoot = Instantiate(Controller.instance.rootPrefab);
-        currRoot.transform.position = transform.position;
+        if (specialRoot == null)
+        {
+            currRoot = Instantiate(Controller.instance.rootPrefab);
+        }
+        else
+        {
+            currRoot = Instantiate(specialRoot);
+        }
+        
+        currRoot.transform.position = transform.position+new Vector3(rootOffsetX,rootOffsetY);
         currRoot.GetComponent<RootScript>().ork = gameObject;
         DealDamage(RootConfig.instance.rootDamage);
         AudioManager.instance.PlaySound("err2");
@@ -49,7 +59,7 @@ public class BaseEnemy : MonoBehaviour, IPointerClickHandler
         }
         rooted = true;
         //Destroy(gameObject);
-        Controller.instance.scoreCounter += score;
+        Controller.instance.SetScore( score);
         
 
     }
